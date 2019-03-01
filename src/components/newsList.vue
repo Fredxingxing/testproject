@@ -1,7 +1,7 @@
 <template>
     <div class="newsList">
         <div v-for="(item,index) in list">
-          <div class="newsItem" @click="toDetail(index)">
+          <div class="newsItem" @click="toNewDetail(index)">
             <img :src="item.cover" class="pic">
             <div class="title">{{item.title}}</div>
           </div>
@@ -24,8 +24,9 @@
                 }
             }
         },
-        method:{
-          toDetail(index){
+        methods:{
+          toNewDetail(index){
+              console.log(this.newArray[index])
           }
         }
     }
