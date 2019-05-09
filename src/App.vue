@@ -1,12 +1,18 @@
 <template>
   <div id="app">
-    <router-view/>
+    <Header />
+    <router-view />
   </div>
 </template>
 
 <script>
+  import Header from './components/header'
 export default {
   name: 'app',
+  components: {
+    Header,
+    // homeSwiper
+  },
 }
 </script>
 
@@ -18,7 +24,5 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-  html{
-    font-size:calc(75px * 2 / 3);
-  }
+
 </style>

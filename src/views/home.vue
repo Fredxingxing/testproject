@@ -1,19 +1,18 @@
 <template>
     <div class="home">
-        <home-swiper :slide-array='homeSlide'></home-swiper>
-        <news-list :new-array='homeList'></news-list>
+        <div>111</div>
     </div>
 </template>
 
 <script>
-    import newsList from '../components/newsList'
-    import homeSwiper from '../components/homeSwiper'
+    // import newsList from '../components/newsList'
+    // import homeSwiper from '../components/homeSwiper'
     import { mapState} from 'vuex'
     export default {
         name: "home",
         components: {
-            newsList,
-            homeSwiper
+            // newsList,
+            // homeSwiper
         },
         created(){
             this.$store.dispatch('getHomeInfo')

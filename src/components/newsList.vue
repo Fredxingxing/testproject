@@ -1,6 +1,6 @@
 <template>
     <div class="newsList">
-        <div v-for="(item,index) in list">
+        <div v-for="(item,index) in list" :key="index">
           <div class="newsItem" @click="toNewDetail(index)">
             <img :src="item.cover" class="pic">
             <div class="title">{{item.title}}</div>
