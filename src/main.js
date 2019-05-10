@@ -2,11 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store.js'
 import router from './router.js'
-
+/***iview*/
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+Vue.use(iView);
 /****axios***/
 import Axios from 'axios'
 Vue.prototype.$axios = Axios
-Axios.defaults.baseURL = 'http://192.168.89.72:8810/'
+Axios.defaults.baseURL = ''
 
 new Vue({
     router,

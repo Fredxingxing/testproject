@@ -1,10 +1,10 @@
 <template>
-    <div>im header</div>
+    <div>动态</div>
 </template>
 
 <script>
   export default {
-    name: 'header'
+    name: 'News'
   };
 </script>
 

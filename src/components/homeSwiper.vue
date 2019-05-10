@@ -1,8 +1,10 @@
 <template>
     <div class="swiper-container">
+        <div class="words">{{words}}</div>
         <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
             <!-- slides -->
             <swiper-slide v-for="(banners,index) in lists" @click="toDetails(index)">
+                <div class="swiperMask"></div>
                 <img class="swiper-container swiper-pagination-bullet-active" :src=banners.img>
             </swiper-slide>
             <!-- Optional controls -->
@@ -53,12 +55,13 @@
             swiperSlide
         },
         props:{
-          slideArray:Array
+          slideArray:Array,
+          words:String,
         },
         computed:{
             lists(){
                 if(this.slideArray.length > 0){
-                    console.log(this.slideArray)
+                    console.log(this.slideArray[0].img)
                     return this.slideArray
                 }
             },
@@ -74,7 +77,7 @@
                 console.log("this is swiper callback")
             },
             toDetails(index) {
-                console.log(1111)
+               console.log(1111)
                console.log(this.slideArray[index])
                 //:to="{path:'/Activity/Detail',query:{id:Activity.id}}"
                 // this.$router.push({path:'/Activity/Detail',query:{id:id}})
@@ -86,6 +89,22 @@
 <style scoped>
 .swiper-container{
     width: 100%;
-    height: 4rem;
+    height:850px;
+}
+.swiperMask{
+    width: 100%;
+    height: 850px;
+    position: absolute;
+    background: #333;
+    z-index: 9;
+    opacity: 0.5;
+}
+.words{
+    position: absolute;
+    z-index: 10;
+    color: #fff;
+    margin: 300px;
+    font-size: 30px;
+    text-align: center;
 }
 </style>

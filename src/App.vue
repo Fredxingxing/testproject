@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <Header />
-    <router-view />
+    <HeaderBar />
+    <router-view style="padding-top: 100px;" />
+    <FooterBar />
   </div>
 </template>
 
 <script>
-  import Header from './components/header'
+  import HeaderBar from './components/headerBar'
+  import FooterBar from './components/footerBar'
 export default {
   name: 'app',
   components: {
-    Header,
+    HeaderBar,
+    FooterBar
     // homeSwiper
   },
 }
@@ -23,6 +26,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: #EEEEEE;
 }
-
+html{
+}
 </style>

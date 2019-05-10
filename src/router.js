@@ -1,8 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-/****Home******/
-import Home from './views/home'
-/****listDetail****/
+/****Home首页******/
+import Home from './views/Home/index'
+/****about关于****/
+import About from './views/About'
+/****news新闻****/
+import News from './views/News'
+/****Partner合作伙伴****/
+import Partner from './views/Partner'
+/****Department部门****/
+import Department from './views/Department'
 // import listDetail from './views/homeListDetail'
 // import homeSwiperDetail from './views/homeSwiperDetail'
 Vue.use(Router)
@@ -14,30 +21,30 @@ const router = new Router({
             component: Home
         },
       {
-        path: '/',
+        path: '/Home',
+        name: 'Home',
+        component: Home
+      },
+      {
+        path: '/partner',
+        name: 'Partner',
+        component: Partner
+      },
+      {
+        path: '/department',
         name: 'Department',
-        component: Home
+        component: Department
       },
       {
-        path: '/',
-        name: 'Team',
-        component: Home
+        path: '/about',
+        name: 'About',
+        component: About
       },
       {
-        path: '/',
+        path: '/news',
         name: 'News',
-        component: Home
+        component: News
       },
-        // {
-        //     path: '/swiperDetail',
-        //     name: 'homeSwiperDetail',
-        //     component: homeSwiperDetail
-        // },
-        // {
-        //     path: '/listDetail',
-        //     name: 'listDetail',
-        //     component: listDetail
-        // },
     ]
 })
 export default router
