@@ -1,12 +1,50 @@
 <template>
     <div class="footerBar">
-        我是也页脚
+        <div></div>
+        <div>
+            <!--<router-link v-for="route in routerList" :to="route.path" :class="route.class" tag="div">-->
+                <!--{{route.name}}-->
+            <!--</router-link>-->
+        </div>
+        <div></div>
+        <div></div>
     </div>
 </template>
 
 <script>
   export default {
-    name: 'footer-bar'
+    name: 'footer-bar',
+    data(){
+      return{
+        routerList:[
+          {
+            name:'首页',
+            path:'/',
+            class:'routeItem',
+          },
+          {
+            name:'部门',
+            path:'/department',
+            class:'routeItem',
+          },
+          {
+            name:'动态（新闻）',
+            path:'/news',
+            class:'routeItem',
+          },
+          {
+            name:'合作伙伴',
+            path:'/partner',
+            class:'routeItem',
+          },
+          {
+            name:'关于',
+            path:'/about',
+            class:'routeItem',
+          },
+        ]
+      }
+    }
   };
 </script>
 
