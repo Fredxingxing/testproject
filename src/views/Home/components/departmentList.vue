@@ -1,8 +1,8 @@
 <template>
-    <div class="listBox">
+    <div class="listBox" >
         <Card v-for="item in departmentList" :key="item.id" class="item">
-            <p slot="title">{{item.name}}</p>
-            <p>Content of no border type. Content of no border type. Content of no border type. Content of no border type. </p>
+            <p slot="title" @click="toDepartment(item)">{{item.name}}</p>
+            <p @click="toDepartment(item)">Content of no border type. Content of no border type. Content of no border type. Content of no border type. </p>
         </Card>
     </div>
 </template>
@@ -14,6 +14,11 @@
     data(){
       return {
         departmentList: APP_Data,
+      }
+    },
+    methods:{
+      toDepartment:function( item ) {
+        this.$router.push({path:'department',query:{id:item.id}})
       }
     }
   };
