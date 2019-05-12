@@ -1,13 +1,15 @@
 <template>
     <div class="headerBar">
-        <div class="imgBox">
-            <img class="item" src="@/assets/logo.jpg">
-        </div>
-        <div class="routerBox">
-            <router-link v-for="route in routerList" :to="route.path" :class="route.class" tag="div">
-                {{route.name}}
-            </router-link>
-        </div>
+        <div class="container">
+          <div class="imgBox">
+              <img class="item" src="@/assets/logo.jpg">
+          </div>
+          <div class="routerBox">
+              <router-link v-for="route in routerList" :to="route.path" :class="route.class" tag="div" :key="route.name">
+                  {{route.name}}
+              </router-link>
+          </div>
+        </div> 
     </div>
 </template>
 
@@ -49,34 +51,36 @@
 </script>
 
 <style lang="less" scoped>
-    @media (min-width: 900px) {
        .headerBar{
          width: 100%;
-         height:100px;
+         height:80px;
          position: fixed;
          top: 0;
          z-index: 999;
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
          background: #fff;
-         box-shadow: 0px 1px 1px #aaa;
-         border-bottom: 1px solid #d5d5d5;
+         box-shadow: 0px 1px 1px 0 #eaeaea;
+         .container{
+           width:1200px;
+           margin:auto;
+           display: flex;
+          justify-content: space-between;
+          align-items: center;
+         }
            .imgBox{
-               padding-left: 100px;
+             line-height: 80px;
                .item{
-                   height: 75px;
-                   width: 75px;
+                 vertical-align: middle;
+                   height: 65px;
+                   width: 65px;
                }
            }
            .routerBox{
                display: flex;
                justify-content: space-around;
                align-items: center;
-               padding-right: 50px;
                .routeItem{
-                   padding: 20px;
-                   font-size: 22px;
+                   padding: 0 20px;
+                   font-size: 16px;
                    cursor: pointer;
                }
                .routeItem:hover{
@@ -85,5 +89,4 @@
                }
            }
        }
-    }
 </style>

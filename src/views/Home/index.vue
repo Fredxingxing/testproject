@@ -45,9 +45,7 @@
 </script>
 
 <style lang="less" scoped>
-    @media (min-width: 800px) {
         .home{
-            padding-top: 2px;
             position: relative;
             .title{
                 padding-top: 50px;
@@ -55,5 +53,4 @@
                 font-weight: bold;
             }
         }
-    }
 </style>
